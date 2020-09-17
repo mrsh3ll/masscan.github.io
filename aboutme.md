@@ -1,16 +1,11 @@
 ---
 layout: page
 title: About me
-subtitle: Why you'd want to go on a date with me
+subtitle: Infosec enthusiast 
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+- Security Analyst @ [Bluecast](https://bluecast.tech/)
+- OSCP Certified
 
-- I rock a great mustache
-- I'm extremely loyal to my family
 
-What else do you need?
-
-### My story
-
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+This blog is a collection of CTF writeups and other vulnerability related content. Please contact me by twitter or e-mail if you have any questions. Links can be found on the bottom of this page.

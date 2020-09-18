@@ -57,13 +57,21 @@ int main()
 ~~~
 
 From source code we will understand that to get flag we need to call win().
+
 But  win() function is called only once if the application get a SISEGV signal.
+
 A **SIGSEGV** is an error(signal) caused by an invalid memory reference or a segmentation fault. 
-so the vuln() function is executing first. vuln() using gets() which is very dangerous as you can see that on man page of gets.
+
+So the vuln() function is executing first. vuln() using gets() which is very dangerous as you can see that on man page of gets.
 
 ![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
-the buffer size is 16.
-i am giving  30 'A' s to this binary. so definitely there will be a segmentation fault, win() function will get executed. we will get our flag. :)
+
+The buffer size is 16.
+
+I am giving  30 'A' s to this binary. so definitely there will be a segmentation fault, win() function will get executed. we will get our flag. :)
+
 Lets do that.
+
 ![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
-we got the flaaaaaag :)
+
+We got the flaaaaaag :)

@@ -1,78 +1,69 @@
 ---
 layout: post
-title: Sample blog post
-subtitle: Each post also has a subtitle
-gh-repo: daattali/beautiful-jekyll
-gh-badge: [star, fork, follow]
-tags: [test]
+title: BufferOverflow #0 
+tags: [Binary Exploitation,BufferOverflow]
 comments: true
 ---
 
-This is a demo post to show you how to write blog posts with markdown.  I strongly encourage you to [take 5 minutes to learn how to write in markdown](https://markdowntutorial.com/) - it'll teach you how to transform regular text into bold/italics/headings/tables/etc.
+This is a writeup on how i solved BufferOverflow #0 from NACTF. I hope this will help beginners in binary exploitation while doing ctfs. This is a Beginner level challenge.
 
-**Here is some bold text**
+**CTF : https://www.nactf.com/**
 
-## Here is a secondary heading
-
-Here's a useless table:
-
-| Number | Next number | Previous number |
-| :------ |:--- | :--- |
-| Five | Six | Four |
-| Ten | Eleven | Nine |
-| Seven | Eight | Six |
-| Two | Three | One |
-
-
-How about a yummy crepe?
+## Lets start..
 
 ![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
 
-It can also be centered!
+Download the binary to our system, make it executable and run the binary.
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg){: .mx-auto.d-block :}
+This binary is just printing the input back to us, behaving like a echo program.
 
-Here's a code chunk:
+Lets analyse the source code of this binary to know how it is working.
 
+Here is the source code:
 ~~~
-var foo = function(x) {
-  return(x + 5);
+#include <stdio.h>
+#include <signal.h>
+void win()
+{
+    printf("You win!\n");
+    char buf[256];
+    FILE* f = fopen("./flag.txt", "r");
+    if (f == NULL)
+    {
+        puts("flag.txt not found - ping us on discord if this is happening on the shell server\n");
+    }
+    else
+    {
+        fgets(buf, sizeof(buf), f);
+        printf("flag: %s\n", buf);
+    }
 }
-foo(3)
+void vuln()
+{
+    char buf[16];
+    printf("Type something>");
+    gets(buf);
+    printf("You typed %s!\n", buf);
+}
+int main()
+{
+    /* Disable buffering on stdout */
+    setvbuf(stdout, NULL, _IONBF, 0);
+    /* Call win() on SIGSEGV */
+    signal(SIGSEGV, win);
+    vuln();
+    return 0;
+}
 ~~~
 
-And here is the same code with syntax highlighting:
+From source code we will understand that to get flag we need to call win().
+But  win() function is called only once if the application get a SISEGV signal.
+A **SIGSEGV** is an error(signal) caused by an invalid memory reference or a segmentation fault. 
+so the vuln() function is executing first. vuln() using gets() which is very dangerous as you can see that on man page of gets.
 
-```javascript
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-```
-
-And here is the same code yet again but with line numbers:
-
-{% highlight javascript linenos %}
-var foo = function(x) {
-  return(x + 5);
-}
-foo(3)
-{% endhighlight %}
-
-## Boxes
-You can add notification, warning and error boxes like this:
-
-### Notification
-
-{: .box-note}
-**Note:** This is a notification box.
-
-### Warning
-
-{: .box-warning}
-**Warning:** This is a warning box.
-
-### Error
-
-{: .box-error}
-**Error:** This is an error box.
+![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+the buffer size is 16.
+i am giving  30 'A' s to this binary. so definitely there will be a segmentation fault, win() function will get executed. we will get our flag. :)
+Lets do that.
+![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+we got the flaaaaaag :)

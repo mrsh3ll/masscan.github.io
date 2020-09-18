@@ -86,7 +86,9 @@ Increase the A's to give input to binary.
 
 ![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo1.5.png)
 
-By giving 32 A's to binary i am able to control eip register.
+By giving 28 A's and 4 B's to binary i was able to control eip register.
+
+Now eip contains 0x42424242 which is the hex value of BBBB.
 
 ![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo1.6.png)
  

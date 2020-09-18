@@ -1,17 +1,17 @@
 ---
 layout: post
 title: BufferOverflow-#0 
-tags: [Binary Exploitation,BufferOverflow]
+tags: [Binary Exploitation, BufferOverflow]
 comments: true
 ---
 
-This is a writeup on how i solved BufferOverflow #0 from NACTF. I hope this will help beginners in binary exploitation while doing ctfs. This is a Beginner level challenge.
+This is a writeup on how i solved **BufferOverflow #0** from NACTF. I hope this will help beginners in binary exploitation while doing ctfs. This is a Beginner level challenge.
 
 **CTF : https://www.nactf.com/**
 
 ## Lets start..
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo1.png)
 
 Download the binary to our system, make it executable and run the binary.
 

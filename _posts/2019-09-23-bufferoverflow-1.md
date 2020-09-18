@@ -90,15 +90,15 @@ By giving 32 A's to binary i am able to control eip register.
 
 ![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo1.6.png)
  
-So lets find the start address of win() function .
+So lets find the start address of win() function.
 
 We can use **gdb** as well as **objdump**.
 
-Just type **disas win**
+Just type **disas win** in gdb.
 
 ![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo1.7.png)
 
-Address of win() function is 0x080491b2
+Address of win() function is 0x080491b2.
 
 So we have to make eip register to contain this address.
 

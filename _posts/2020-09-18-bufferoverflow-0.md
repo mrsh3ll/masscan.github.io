@@ -17,6 +17,8 @@ Download the binary to our system, make it executable and run the binary.
 
 This binary is just printing the input back to us, behaving like a echo program.
 
+![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo2.png)
+
 Lets analyse the source code of this binary to know how it is working.
 
 Here is the source code:
@@ -64,7 +66,7 @@ A **SIGSEGV** is an error(signal) caused by an invalid memory reference or a seg
 
 So the vuln() function is executing first. vuln() using gets() which is very dangerous as you can see that on man page of gets.
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo3.png)
 
 The buffer size is 16.
 
@@ -72,6 +74,6 @@ I am giving  30 'A' s to this binary. so definitely there will be a segmentation
 
 Lets do that.
 
-![Crepe](https://s3-media3.fl.yelpcdn.com/bphoto/cQ1Yoa75m2yUFFbY2xwuqw/348s.jpg)
+![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo4.png)
 
 We got the flaaaaaag :)

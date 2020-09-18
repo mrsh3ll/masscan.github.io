@@ -92,7 +92,7 @@ Now eip contains 0x42424242 which is the hex value of BBBB.
 
 ![Crepe](https://raw.githubusercontent.com/Masscan/masscan.github.io/master/assets/img/bo1.6.png)
  
-So lets find the start address of win() function.
+Now we are controlling value of eip register and we have to make eip register points to address of win() function, So lets find the start address of win() function.
 
 We can use **gdb** as well as **objdump**.
 
@@ -102,7 +102,7 @@ Just type **disas win** in gdb.
 
 Address of win() function is 0x080491b2.
 
-So we have to make eip register to contain this address.
+So we have to make eip register points to this address.
 
 Craft our payload accordingly.
 

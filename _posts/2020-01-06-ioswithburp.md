@@ -5,7 +5,7 @@ tags: [iOS security, Burpsuite]
 comments: true
 ---
 
-Hey guys to day i will show you how to intercept http/https traffic from iOS applications using tool called Burpsuite.
+Hey guys today i will show you how to intercept http/https traffic from iOS applications using tool called Burpsuite.
 
 First of all ensure that your system and iOS device are on the same network.
 

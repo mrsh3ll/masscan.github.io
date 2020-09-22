@@ -9,6 +9,8 @@ Hey guys today i am sharing my little notes about a insane tool called **chisel*
 
 Thanks to **ippsec** for teaching me about chisel.
 
+Get chisel from [here](https://github.com/jpillora/chisel).
+
 I will show you some important usages of chisel with example.
 
 ## Chisel cheat sheet.
@@ -102,5 +104,7 @@ Then use proxychains with all your favourite tools,
 ~~~
 proxychains nmap -sC -sT -p 80 172.19.0.4
 ~~~
+
+There are many other options with chisel that we can use. I only mentioned a few.
 
 Hope this will help..

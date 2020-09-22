@@ -35,11 +35,11 @@ chisel client 10.14.14.14:8000 R:8001:172.18.0.3:80 (This will listen on port 80
 chisel client 10.14.14.14:8000 R:127.0.0.1:8001:172.18.0.3:80 (Best way)
 ~~~
 
-    → chisel connect to server 
+    * chisel connect to server 
     
-    → and open port 8001 on remote box which is on server. R is for remote
+    * and open port 8001 on remote box which is on server. R is for remote
     
-    → if any packet on 8001 it will go through tunnel we created through 8000 and then send it out to 172.18.0.3:80
+    * if any packet on server:8001 it will go through tunnel we created through 8000 and then send it out to 172.18.0.3:80
     
 So now we can do a curl command from our kali box and we can now access website running on 172.18.0.3:80.
 

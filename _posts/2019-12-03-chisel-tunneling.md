@@ -1,7 +1,7 @@
 ---
 layout: post
 title: My Notes about Chisel (Tool for Tunneling)
-tags: [System Hacking, Chisel]
+tags: [System Hacking]
 comments: true
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Burpsuite with iOS-HTTP/HTTPS Traffic Intercept
-tags: [iOS security, Burpsuite]
+tags: [iOS security]
 comments: true
 ---
 

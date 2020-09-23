@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BufferOverflow-#2 
-tags: [Binary Exploitation, BufferOverflow]
+tags: [Binary Exploitation]
 comments: true
 ---
 
